@@ -3,18 +3,23 @@ RED='\033[1;31m'
 GREEN='\033[1;32m'
 #install packages in Termux
 pkg install tmux proot-distro -y
+#Adding distribution
+curl -o $PREFIX/etc/proot-distro/debian.sh https://raw.githubusercontent.com/avertv/TermuxDebian11/main/Termux/debian11.sh
 proot-distro install debian
 #download scripts in Termux
-curl -s -O https://raw.githubusercontent.com/bbk14/TermuxDebian/main/Termux/note.sh
+curl -s -O https://raw.githubusercontent.com/avertv/TermuxDebian11/main/Termux/note.sh
 chmod 755 note.sh
-curl -s -O https://raw.githubusercontent.com/bbk14/TermuxDebian/main/Termux/tmux_off.sh
+curl -s -O https://raw.githubusercontent.com/avertv/TermuxDebian11/main/Termux/tmux_off.sh
 chmod 755 tmux_off.sh
-curl -s -O https://raw.githubusercontent.com/bbk14/TermuxDebian/main/Termux/packages.sh
+curl -s -O https://raw.githubusercontent.com/avertv/TermuxDebian11/main/Termux/packages.sh
 chmod 755 packages.sh
-curl -s -O https://raw.githubusercontent.com/bbk14/TermuxDebian/main/Termux/updater.sh
+curl -s -O https://raw.githubusercontent.com/avertv/TermuxDebian11/main/Termux/updater.sh
 chmod 755 updater.sh
 #start Debian
 proot-distro login debian
+#add DNS
+echo 'nameserver 8.8.8.8' > /etc/resolv.conf
+echo 'nameserver 8.8.4.4' >> /etc/resolv.conf
 #install packages in Debian
 apt-get update && apt-get install -y wget libicu67
 #clean packages cache Debian
