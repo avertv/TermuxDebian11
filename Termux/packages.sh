@@ -25,7 +25,7 @@ ln -s /usr/share/dotnet/dotnet /usr/bin/dotnet
 rm dotnet-install.sh
 #install Lampac
 cd /home
-wget https://raw.githubusercontent.com/bbk14/TermuxDebian/main/Termux/Debian/lampac_updater.sh
+wget https://raw.githubusercontent.com/avertv/TermuxDebian11/main/Termux/Debian/lampac_updater.sh
 chmod 755 lampac_updater.sh
 #install Lampac
 mkdir lampac
@@ -35,7 +35,7 @@ echo -n $gitver > vers.txt
 wget https://github.com/immisterio/Lampac/releases/latest/download/publish.zip
 unzip -o publish.zip
 rm -f publish.zip
-wget https://raw.githubusercontent.com/bbk14/TermuxDebian/main/Termux/Debian/update.sh
+wget https://raw.githubusercontent.com/avertv/TermuxDebian11/main/Termux/Debian/update.sh
 if [ -f "/home/config/init.conf" ];
 then
 mv /home/config/init.conf /home/lampac/init.conf
