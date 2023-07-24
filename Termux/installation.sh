@@ -44,7 +44,7 @@ bash tmux_off.sh
 bash updater.sh
 tmux new-session -d -s pac bash pac.sh
 tmux select-layout -t pac tiled
-tmux split-window -h -p 75 -t pac:0 nano pac.sh
+tmux split-window -h -t pac:0 nano pac.sh
 killall nano
 bash note.sh
 bash packages.sh
