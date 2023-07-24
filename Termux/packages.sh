@@ -194,7 +194,7 @@ proot-distro login debian -- bash /home/updater/lampac.sh
 #check if Lampac is installed
 if proot-distro login debian -- [ -f "/home/lampac/Lampac.dll" ];
 then
-grep -qF -- 'lampac' '.bashrc' || echo 'tmux split-window -v -p 100 -t pac:0 "proot-distro login debian -- bash /home/lampac_updater.sh"'  >> .bashrc
+grep -qF -- 'lampac' '.bashrc' || echo 'tmux split-window -v -t pac:0 "proot-distro login debian -- bash /home/lampac_updater.sh"'  >> .bashrc
 fi
 ;;
 
@@ -204,7 +204,7 @@ proot-distro login debian -- bash /home/updater/jackett.sh
 #check if Jackett is installed
 if proot-distro login debian -- [ -d "/home/Jackett" ];
 then
-grep -qF -- 'jackett' '.bashrc' || echo 'tmux split-window -v -p 100 -t pac:0 "proot-distro login debian -- /home/Jackett/./jackett"'  >> .bashrc
+grep -qF -- 'jackett' '.bashrc' || echo 'tmux split-window -v -t pac:0 "proot-distro login debian -- /home/Jackett/./jackett"'  >> .bashrc
 fi
 ;;
 3)
@@ -213,7 +213,7 @@ proot-distro login debian -- bash /home/updater/torrserver111.sh
 #check if Torrserver is installed
 if proot-distro login debian -- [ -d "/home/torrserver" ];
 then
-grep -qF -- 'torrserver' '.bashrc' || echo 'tmux split-window -v -p 100 -t pac:0 "proot-distro login debian -- /home/torrserver/torrserver -p 8091 -a -d /home/config/torrserver"'  >> .bashrc
+grep -qF -- 'torrserver' '.bashrc' || echo 'tmux split-window -v -t pac:0 "proot-distro login debian -- /home/torrserver/torrserver -p 8091 -a -d /home/config/torrserver"'  >> .bashrc
 fi
 ;;
 4)
@@ -222,7 +222,7 @@ proot-distro login debian -- bash /home/updater/torrserver118.sh
 #check if Torrserver is installed
 if proot-distro login debian -- [ -d "/home/torrserver" ];
 then
-grep -qF -- 'torrserver' '.bashrc' || echo 'tmux split-window -v -p 100 -t pac:0 "proot-distro login debian -- /home/torrserver/torrserver -p 8091 -a -d /home/config/torrserver"'  >> .bashrc
+grep -qF -- 'torrserver' '.bashrc' || echo 'tmux split-window -v -t pac:0 "proot-distro login debian -- /home/torrserver/torrserver -p 8091 -a -d /home/config/torrserver"'  >> .bashrc
 fi
 ;;
 5)
@@ -231,7 +231,7 @@ proot-distro login debian -- bash /home/updater/torrserver.sh
 #check if Torrserver is installed
 if proot-distro login debian -- [ -d "/home/torrserver" ];
 then
-grep -qF -- 'torrserver' '.bashrc' || echo 'tmux split-window -v -p 100 -t pac:0 "proot-distro login debian -- /home/torrserver/torrserver -p 8091 -a -d /home/config/torrserver"'  >> .bashrc
+grep -qF -- 'torrserver' '.bashrc' || echo 'tmux split-window -v -t pac:0 "proot-distro login debian -- /home/torrserver/torrserver -p 8091 -a -d /home/config/torrserver"'  >> .bashrc
 fi
 ;;
 6)
@@ -240,7 +240,7 @@ pkg upgrade && pkg install -f tor -y
 pkg clean
 if [ -d "$PREFIX/etc/tor" ];
 then
-grep -qF -- '-t pac:0 tor' '.bashrc' || echo 'tmux split-window -v -p 100 -t pac:0 tor'  >> .bashrc
+grep -qF -- '-t pac:0 tor' '.bashrc' || echo 'tmux split-window -v -t pac:0 tor'  >> .bashrc
 fi
 ;;
 7)
